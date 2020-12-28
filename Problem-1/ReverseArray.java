@@ -5,14 +5,25 @@ public class ReverseArray{
     {
         int temp;
 
-        while(start<end)
-        {
-            temp=arr[start];
-            arr[start]=arr[end];
-            arr[end]=temp;
-            start++;
-            end--;
-        }
+    /*Iterative Approach*/
+        
+        // while(start<end)
+        // {
+        //     temp=arr[start];
+        //     arr[start]=arr[end];
+        //     arr[end]=temp;
+        //     start++;
+        //     end--;
+        // }
+
+    /*Recursive Approach*/
+
+        if(start >= end)
+        return;
+        temp=arr[start];
+        arr[start]=arr[end];
+        arr[end]=temp;
+        reverseArray(arr, start+1, end-1);
     }
 
     public static void printArray(int arr[], int size)
